@@ -1,6 +1,6 @@
 import '../home_page/widgets/destinationlist_item_widget.dart';
 import 'models/destinationlist_item_model.dart';
-import 'models/home_model.dart';
+// import 'models/home_model.dart';
 import 'package:flutter/material.dart';
 import 'package:travenor/core/app_export.dart';
 import 'package:travenor/widgets/app_bar/appbar_image.dart';

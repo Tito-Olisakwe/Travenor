@@ -1,5 +1,5 @@
 import '../favorite_places_screen/widgets/viewhierarchy_item_widget.dart';
-import 'models/favorite_places_model.dart';
+// import 'models/favorite_places_model.dart';
 import 'models/viewhierarchy_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:travenor/core/app_export.dart';

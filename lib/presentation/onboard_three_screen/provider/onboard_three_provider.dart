@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travenor/core/app_export.dart';
+// import 'package:travenor/core/app_export.dart';
 import 'package:travenor/presentation/onboard_three_screen/models/onboard_three_model.dart';
 
 /// A provider class for the OnboardThreeScreen.

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:travenor/core/app_export.dart';
+// import 'package:travenor/core/app_export.dart';
 import 'package:travenor/presentation/home_page/models/home_model.dart';
-import '../models/destinationlist_item_model.dart';
+// import '../models/destinationlist_item_model.dart';
 
 /// A provider class for the HomePage.
 ///

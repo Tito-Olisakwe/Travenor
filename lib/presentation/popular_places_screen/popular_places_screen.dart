@@ -1,5 +1,5 @@
 import '../popular_places_screen/widgets/popularplaces_item_widget.dart';
-import 'models/popular_places_model.dart';
+// import 'models/popular_places_model.dart';
 import 'models/popularplaces_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:travenor/core/app_export.dart';

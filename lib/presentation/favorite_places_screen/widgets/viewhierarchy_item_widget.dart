@@ -34,7 +34,7 @@ class ViewhierarchyItemWidget extends StatelessWidget {
               alignment: Alignment.topRight,
               children: [
                 CustomImageView(
-                  imagePath: viewhierarchyItemModelObj?.reservoirImage,
+                  imagePath: viewhierarchyItemModelObj.reservoirImage,
                   height: 124.v,
                   width: 137.h,
                   radius: BorderRadius.circular(

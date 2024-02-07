@@ -25,7 +25,7 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomImageView(
-            imagePath: viewhierarchy1ItemModelObj?.reservoirImage,
+            imagePath: viewhierarchy1ItemModelObj.reservoirImage,
             height: 124.v,
             width: 137.h,
             radius: BorderRadius.circular(

@@ -1,4 +1,4 @@
-import 'models/splash_model.dart';
+// import 'models/splash_model.dart';
 import 'package:flutter/material.dart';
 import 'package:travenor/core/app_export.dart';
 import 'provider/splash_provider.dart';

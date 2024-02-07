@@ -33,7 +33,7 @@ class PopularplacesItemWidget extends StatelessWidget {
               alignment: Alignment.topRight,
               children: [
                 CustomImageView(
-                  imagePath: popularplacesItemModelObj?.reservoirImage,
+                  imagePath: popularplacesItemModelObj.reservoirImage,
                   height: 124.v,
                   width: 137.h,
                   radius: BorderRadius.circular(

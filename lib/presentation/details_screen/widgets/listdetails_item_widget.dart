@@ -18,7 +18,7 @@ class ListdetailsItemWidget extends StatelessWidget {
     return SizedBox(
       width: 42.h,
       child: CustomImageView(
-        imagePath: listdetailsItemModelObj?.rectangle,
+        imagePath: listdetailsItemModelObj.rectangle,
         height: 42.adaptSize,
         width: 42.adaptSize,
         radius: BorderRadius.circular(

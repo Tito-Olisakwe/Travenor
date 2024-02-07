@@ -1,5 +1,5 @@
 import '../details_screen/widgets/listdetails_item_widget.dart';
-import 'models/details_model.dart';
+// import 'models/details_model.dart';
 import 'models/listdetails_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as fs;

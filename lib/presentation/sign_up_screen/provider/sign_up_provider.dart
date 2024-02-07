@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travenor/core/app_export.dart';
+// import 'package:travenor/core/app_export.dart';
 import 'package:travenor/presentation/sign_up_screen/models/sign_up_model.dart';
 
 /// A provider class for the SignUpScreen.

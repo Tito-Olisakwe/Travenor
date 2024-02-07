@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travenor/core/app_export.dart';
+// import 'package:travenor/core/app_export.dart';
 import 'package:travenor/presentation/profile_screen/models/profile_model.dart';
 
 /// A provider class for the ProfileScreen.

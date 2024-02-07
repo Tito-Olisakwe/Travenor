@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:travenor/core/app_export.dart';
+// import 'package:travenor/core/app_export.dart';
 import 'package:travenor/presentation/favorite_places_screen/models/favorite_places_model.dart';
-import '../models/viewhierarchy_item_model.dart';
+// import '../models/viewhierarchy_item_model.dart';
 
 /// A provider class for the FavoritePlacesScreen.
 ///

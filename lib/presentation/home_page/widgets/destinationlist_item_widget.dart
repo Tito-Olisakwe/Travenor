@@ -43,7 +43,7 @@ class DestinationlistItemWidget extends StatelessWidget {
                     alignment: Alignment.topRight,
                     children: [
                       CustomImageView(
-                        imagePath: destinationlistItemModelObj?.reservoirImage,
+                        imagePath: destinationlistItemModelObj.reservoirImage,
                         height: 286.v,
                         width: 240.h,
                         radius: BorderRadius.circular(

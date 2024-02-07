@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:travenor/core/app_export.dart';
+// import 'package:travenor/core/app_export.dart';
 import 'package:travenor/presentation/details_screen/models/details_model.dart';
-import '../models/listdetails_item_model.dart';
+// import '../models/listdetails_item_model.dart';
 
 /// A provider class for the DetailsScreen.
 ///
