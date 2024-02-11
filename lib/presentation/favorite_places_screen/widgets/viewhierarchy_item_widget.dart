@@ -72,7 +72,7 @@ class ViewhierarchyItemWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 6.v),
+          // SizedBox(height: 6.v),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

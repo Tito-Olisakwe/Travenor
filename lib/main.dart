@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+
 // import 'package:provider/provider.dart';
 import 'package:travenor/presentation/app_navigation_screen/provider/app_navigation_provider.dart';
 import 'package:travenor/presentation/details_screen/provider/details_provider.dart';
@@ -14,6 +15,7 @@ import 'package:travenor/presentation/sign_in_screen/provider/sign_in_provider.d
 import 'package:travenor/presentation/sign_up_screen/provider/sign_up_provider.dart';
 import 'package:travenor/presentation/splash_screen/provider/splash_provider.dart';
 import 'core/app_export.dart';
+
 // Import all screens for easy testing
 import 'presentation/splash_screen/splash_screen.dart';
 import 'presentation/onboard_three_screen/onboard_three_screen.dart';
@@ -25,7 +27,6 @@ import 'presentation/popular_places_screen/popular_places_screen.dart';
 import 'presentation/profile_screen/profile_screen.dart';
 import 'presentation/favorite_places_screen/favorite_places_screen.dart';
 import 'presentation/search_screen/search_screen.dart';
-import 'presentation/app_navigation_screen/app_navigation_screen.dart';
 
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 void main() {
@@ -87,13 +88,12 @@ class MyApp extends StatelessWidget {
             // Examples for testing other screens:
             // home: SignInScreen(),
             // home: SignUpScreen(),
-            home: HomeContainerScreen(),
+            // home: HomeContainerScreen(),
             // home: DetailsScreen(),
             // home: PopularPlacesScreen(),
             // home: ProfileScreen(),
             // home: FavoritePlacesScreen(),
-            // home: SearchScreen(),
-            // home: AppNavigationScreen(),
+            home: SearchScreen(),
           ),
         );
       },

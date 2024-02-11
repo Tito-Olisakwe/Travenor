@@ -1,16 +1,7 @@
 # travenor
 
-A new Flutter project.
 
-## Getting Started
+The Travenor App emerges as an indispensable travel companion for those venturing into the heart of Rwanda, specifically targeting the vibrant city of Kigali. This innovative application is designed to unveil the best tourist sites the city has to offer, from the serene beauty of the Kigali Genocide Memorial, offering a profound historical insight, to the bustling atmosphere of the Kimironko Market, where travelers can immerse themselves in local culture and crafts. The app not only highlights must-visit destinations but also provides practical information, including directions, opening hours, and ticket prices, ensuring a seamless travel experience. With user-friendly features and up-to-date recommendations, the Travenor App caters to both seasoned adventurers and first-time visitors, making it the ultimate guide to exploring Kigali's rich heritage, stunning landscapes, and vibrant urban life.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#link to our prototype app below
+https://www.figma.com/file/QV1IfSJxI7SSk9kQbagRFY/Travenor-App-Design?type=design&node-id=0-1&mode=design&t=ZiE0fTrAcHGMkntg-0

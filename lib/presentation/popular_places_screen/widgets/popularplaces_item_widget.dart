@@ -115,7 +115,7 @@ class PopularplacesItemWidget extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 7.v),
+          // SizedBox(height: 7.v),
           Padding(
             padding: EdgeInsets.only(left: 4.h),
             child: RichText(

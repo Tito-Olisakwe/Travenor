@@ -33,6 +33,7 @@ class DestinationlistItemWidget extends StatelessWidget {
               borderRadius: BorderRadiusStyle.roundedBorder24,
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -109,7 +110,6 @@ class DestinationlistItemWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 13.v),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(

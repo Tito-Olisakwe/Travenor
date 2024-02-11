@@ -62,7 +62,7 @@ class Viewhierarchy1ItemWidget extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 6.v),
+          // SizedBox(height: 6.v),
           Padding(
             padding: EdgeInsets.only(left: 4.h),
             child: RichText(
