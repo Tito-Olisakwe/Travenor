@@ -28,12 +28,8 @@ import 'presentation/profile_screen/profile_screen.dart';
 import 'presentation/favorite_places_screen/favorite_places_screen.dart';
 import 'presentation/search_screen/search_screen.dart';
 
-// Import dotenv
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-await dotenv.load(fileName: ".env");
-
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
-void main() {
+void main(){
   WidgetsFlutterBinding.ensureInitialized();
   Future.wait([
     SystemChrome.setPreferredOrientations([
@@ -88,7 +84,7 @@ class MyApp extends StatelessWidget {
             // initialRoute: AppRoutes.initialRoute,
             // routes: AppRoutes.routes,
             // Directly load a specific screen for testing. Change the screen here as needed.
-            // home: SplashScreen(),
+            home: SplashScreen(),
             // Examples for testing other screens:
             // home: SignInScreen(),
             // home: SignUpScreen(),
@@ -97,7 +93,7 @@ class MyApp extends StatelessWidget {
             // home: PopularPlacesScreen(),
             // home: ProfileScreen(),
             // home: FavoritePlacesScreen(),
-            home: SearchScreen(),
+            // home: SearchScreen(),
           ),
         );
       },
