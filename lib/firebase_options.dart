@@ -4,6 +4,9 @@ import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
+// import dotenv
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
 /// Example:
@@ -44,7 +47,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCGqDhOlVnbMKU1ftkXf3UfuelicK-uAYI',
+    apiKey: dotenv.env['WEB_API_KEY'],
     appId: '1:600025639536:web:c40ba3158542bfcf9462b5',
     messagingSenderId: '600025639536',
     projectId: 'travenor-87442',
@@ -54,7 +57,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBSysUsm_r-SI1dF_90I6o-NFvYKr3qnus',
+    apiKey: dotenv.env['ANDROID_API_KEY'],
     appId: '1:600025639536:android:507d28bc12d472129462b5',
     messagingSenderId: '600025639536',
     projectId: 'travenor-87442',
@@ -62,7 +65,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyA1RYWwc5-StgCa1TkB_QA8e9OsJi2qLmo',
+    apiKey: dotenv.env['IOS_API_KEY'],
     appId: '1:600025639536:ios:5202c108d6d2c3129462b5',
     messagingSenderId: '600025639536',
     projectId: 'travenor-87442',
@@ -71,7 +74,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyA1RYWwc5-StgCa1TkB_QA8e9OsJi2qLmo',
+    apiKey: dotenv.env['MACOS_API_KEY'],
     appId: '1:600025639536:ios:8abad6f1db87387d9462b5',
     messagingSenderId: '600025639536',
     projectId: 'travenor-87442',
