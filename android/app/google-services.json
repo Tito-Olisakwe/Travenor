@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "600025639536",
+    "project_id": "travenor-87442",
+    "storage_bucket": "travenor-87442.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600025639536:android:507d28bc12d472129462b5",
+        "android_client_info": {
+          "package_name": "com.titoparissapplication.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSysUsm_r-SI1dF_90I6o-NFvYKr3qnus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
