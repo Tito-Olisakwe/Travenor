@@ -18,6 +18,7 @@ dependencies:
   readmore: ^2.2.0
   intl: ^0.18.0
   firebase_core: ^2.25.4
+  flutter_dotenv: ^5.1.0
 dev_dependencies: 
   flutter_test: 
     sdk: flutter
