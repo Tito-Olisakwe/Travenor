@@ -28,6 +28,10 @@ import 'presentation/profile_screen/profile_screen.dart';
 import 'presentation/favorite_places_screen/favorite_places_screen.dart';
 import 'presentation/search_screen/search_screen.dart';
 
+// Import dotenv
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+await dotenv.load(fileName: ".env");
+
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
