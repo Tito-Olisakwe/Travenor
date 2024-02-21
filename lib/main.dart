@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 // import 'package:provider/provider.dart';
@@ -29,8 +30,9 @@ import 'presentation/favorite_places_screen/favorite_places_screen.dart';
 import 'presentation/search_screen/search_screen.dart';
 
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
-void main(){
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load();
   Future.wait([
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
@@ -84,11 +86,11 @@ class MyApp extends StatelessWidget {
             // initialRoute: AppRoutes.initialRoute,
             // routes: AppRoutes.routes,
             // Directly load a specific screen for testing. Change the screen here as needed.
-            home: SplashScreen(),
+            // home: SplashScreen(),
             // Examples for testing other screens:
             // home: SignInScreen(),
             // home: SignUpScreen(),
-            // home: HomeContainerScreen(),
+            home: HomeContainerScreen(),
             // home: DetailsScreen(),
             // home: PopularPlacesScreen(),
             // home: ProfileScreen(),
