@@ -7,6 +7,7 @@ import 'package:travenor/widgets/app_bar/custom_app_bar.dart';
 import 'package:travenor/widgets/custom_elevated_button.dart';
 import 'package:travenor/widgets/custom_icon_button.dart';
 import 'package:travenor/widgets/custom_text_form_field.dart';
+import '../sign_in_screen/sign_in_screen.dart';
 import 'provider/sign_up_provider.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -120,7 +121,7 @@ class SignUpScreenState extends State<SignUpScreen> {
         builder: (context, emailController, child) {
           return CustomTextFormField(
               controller: emailController,
-              hintText: "msg_www_uihut_gmail_com".tr,
+              hintText: "123email@gmail.com".tr,
               textInputType: TextInputType.emailAddress,
               validator: (value) {
                 if (value == null || (!isValidEmail(value, isRequired: true))) {
@@ -190,22 +191,24 @@ class SignUpScreenState extends State<SignUpScreen> {
 
   /// Navigates to the signInScreen when the action is triggered.
   onTapBackArrow(BuildContext context) {
-    NavigatorService.pushNamed(
-      AppRoutes.signInScreen,
-    );
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return SignInScreen.builder(context);
+    }));
   }
 
   /// Navigates to the signInScreen when the action is triggered.
   onTapSignUp(BuildContext context) {
-    NavigatorService.pushNamed(
-      AppRoutes.signInScreen,
-    );
+    if (_formKey.currentState!.validate()) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        return SignInScreen.builder(context);
+      }));
+    }
   }
 
   /// Navigates to the signInScreen when the action is triggered.
   onTapTxtSignIn(BuildContext context) {
-    NavigatorService.pushNamed(
-      AppRoutes.signInScreen,
-    );
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return SignInScreen.builder(context);
+    }));
   }
 }

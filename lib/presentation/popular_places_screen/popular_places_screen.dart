@@ -55,7 +55,7 @@ class PopularPlacesScreenState extends State<PopularPlacesScreen> {
             imagePath: ImageConstant.imgBackArrow,
             margin: EdgeInsets.only(left: 20.h, top: 6.v, bottom: 6.v),
             onTap: () {
-              onTapBackArrow(context);
+              Navigator.pop(context);
             }),
         centerTitle: true,
         title: AppbarTitle(text: "lbl_popular_places".tr));

@@ -23,7 +23,39 @@ class AppbarTrailingIconbutton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        onTap!.call();
+        // Use ScaffoldMessenger to show the Snackbar directly without SnackBarAction
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: Color(0xffF2F2F2),
+            content: Text(
+              'Bookmark added',
+              style: TextStyle(color: Color(0xff581845)),
+            ),
+            duration: Duration(seconds: 2), // Adjust the duration as needed
+            action: SnackBarAction(
+              textColor: Color(0xff581845),
+              label: 'Undo',
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    backgroundColor: Color(0xffF2F2F2),
+                    content: Text(
+                      'Bookmark added',
+                      style: TextStyle(color: Color(0xff581845)),
+                    ),
+                    duration:
+                        Duration(seconds: 2), // Adjust the duration as needed
+                  ),
+                );
+              },
+            ),
+          ),
+        );
+
+        // Delay the pop action to allow the Snackbar to be seen, if necessary
+        Future.delayed(Duration(seconds: 2), () {
+          Navigator.pop(context);
+        });
       },
       child: Padding(
         padding: margin ?? EdgeInsets.zero,

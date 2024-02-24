@@ -1,3 +1,6 @@
+import 'package:travenor/presentation/popular_places_screen/popular_places_screen.dart';
+
+import '../details_screen/details_screen.dart';
 import '../home_page/widgets/destinationlist_item_widget.dart';
 import 'models/destinationlist_item_model.dart';
 // import 'models/home_model.dart';
@@ -108,8 +111,16 @@ class HomePageState extends State<HomePage> {
                       style: theme.textTheme.titleLarge),
                   Padding(
                       padding: EdgeInsets.symmetric(vertical: 3.v),
-                      child: Text("lbl_view_all".tr,
-                          style: CustomTextStyles.bodyMediumPrimary))
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return PopularPlacesScreen.builder(context);
+                          }));
+                        },
+                        child: Text("lbl_view_all".tr,
+                            style: CustomTextStyles.bodyMediumPrimary),
+                      ))
                 ])));
   }
 
@@ -141,8 +152,8 @@ class HomePageState extends State<HomePage> {
 
   /// Navigates to the detailsScreen when the action is triggered.
   onTapViewHierarchy(BuildContext context) {
-    NavigatorService.pushNamed(
-      AppRoutes.detailsScreen,
-    );
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return DetailsScreen.builder(context);
+    }));
   }
 }

@@ -18,15 +18,6 @@ import 'core/app_export.dart';
 
 // Import all screens for easy testing
 import 'presentation/splash_screen/splash_screen.dart';
-import 'presentation/onboard_three_screen/onboard_three_screen.dart';
-import 'presentation/sign_in_screen/sign_in_screen.dart';
-import 'presentation/sign_up_screen/sign_up_screen.dart';
-import 'presentation/home_container_screen/home_container_screen.dart';
-import 'presentation/details_screen/details_screen.dart';
-import 'presentation/popular_places_screen/popular_places_screen.dart';
-import 'presentation/profile_screen/profile_screen.dart';
-import 'presentation/favorite_places_screen/favorite_places_screen.dart';
-import 'presentation/search_screen/search_screen.dart';
 
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 void main() {
@@ -84,16 +75,7 @@ class MyApp extends StatelessWidget {
             // initialRoute: AppRoutes.initialRoute,
             // routes: AppRoutes.routes,
             // Directly load a specific screen for testing. Change the screen here as needed.
-            // home: SplashScreen(),
-            // Examples for testing other screens:
-            // home: SignInScreen(),
-            // home: SignUpScreen(),
-            // home: HomeContainerScreen(),
-            // home: DetailsScreen(),
-            // home: PopularPlacesScreen(),
-            // home: ProfileScreen(),
-            // home: FavoritePlacesScreen(),
-            home: SearchScreen(),
+            home: SplashScreen(),
           ),
         );
       },

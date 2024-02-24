@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:travenor/core/app_export.dart';
 import 'package:travenor/core/utils/validation_functions.dart';
+import 'package:travenor/presentation/home_container_screen/home_container_screen.dart';
+import 'package:travenor/presentation/sign_up_screen/sign_up_screen.dart';
 import 'package:travenor/widgets/app_bar/appbar_leading_iconbutton.dart';
 import 'package:travenor/widgets/app_bar/custom_app_bar.dart';
 import 'package:travenor/widgets/custom_elevated_button.dart';
@@ -60,15 +62,14 @@ class SignInScreenState extends State<SignInScreen> {
                                   builder: (context, emailController, child) {
                                     return CustomTextFormField(
                                         controller: emailController,
-                                        hintText: "msg_www_uihut_gmail_com".tr,
+                                        hintText: "123email@gmail.com".tr,
                                         textInputType:
                                             TextInputType.emailAddress,
                                         validator: (value) {
                                           if (value == null ||
                                               (!isValidEmail(value,
                                                   isRequired: true))) {
-                                            return "err_msg_please_enter_valid_email"
-                                                .tr;
+                                            return "123email@gmail.com".tr;
                                           }
                                           return null;
                                         });
@@ -176,22 +177,20 @@ class SignInScreenState extends State<SignInScreen> {
 
   /// Navigates to the onboardThreeScreen when the action is triggered.
   onTapBackArrow(BuildContext context) {
-    NavigatorService.pushNamed(
-      AppRoutes.onboardThreeScreen,
-    );
+    Navigator.pop(context);
   }
 
   /// Navigates to the homeContainerScreen when the action is triggered.
   onTapSignIn(BuildContext context) {
-    NavigatorService.pushNamed(
-      AppRoutes.homeContainerScreen,
-    );
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return HomeContainerScreen.builder(context);
+    }));
   }
 
   /// Navigates to the signUpScreen when the action is triggered.
   onTapTxtSignUp(BuildContext context) {
-    NavigatorService.pushNamed(
-      AppRoutes.signUpScreen,
-    );
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return SignUpScreen.builder(context);
+    }));
   }
 }

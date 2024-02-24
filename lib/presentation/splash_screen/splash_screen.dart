@@ -1,6 +1,7 @@
 // import 'models/splash_model.dart';
 import 'package:flutter/material.dart';
 import 'package:travenor/core/app_export.dart';
+import 'package:travenor/presentation/sign_in_screen/sign_in_screen.dart';
 import 'provider/splash_provider.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -19,10 +20,10 @@ class SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 7000), () {
-      NavigatorService.popAndPushNamed(
-        AppRoutes.onboardThreeScreen,
-      );
+    Future.delayed(const Duration(milliseconds: 3000), () {
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        return SignInScreen.builder(context);
+      }));
     });
   }
 

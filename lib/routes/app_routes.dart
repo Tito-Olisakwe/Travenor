@@ -16,7 +16,7 @@ class AppRoutes {
 
   static const String onboardThreeScreen = '/onboard_three_screen';
 
-  static const String signInScreen = '/sign_in_screen';
+  static const String signInScreen = '/sign_in_screen.dart';
 
   static const String signUpScreen = '/sign_up_screen';
 
