@@ -9,6 +9,7 @@ import 'package:travenor/widgets/app_bar/custom_app_bar.dart';
 import 'package:travenor/widgets/custom_elevated_button.dart';
 import 'package:travenor/widgets/custom_icon_button.dart';
 import 'package:travenor/widgets/custom_text_form_field.dart';
+import 'package:travenor/core/utils/firebase_service.dart';
 import 'provider/sign_in_provider.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -62,7 +63,7 @@ class SignInScreenState extends State<SignInScreen> {
                                   builder: (context, emailController, child) {
                                     return CustomTextFormField(
                                         controller: emailController,
-                                        hintText: "123email@gmail.com".tr,
+                                        hintText: "Enter your email",
                                         textInputType:
                                             TextInputType.emailAddress,
                                         validator: (value) {
@@ -75,26 +76,23 @@ class SignInScreenState extends State<SignInScreen> {
                                         });
                                   }),
                               SizedBox(height: 24.v),
-                              Consumer<SignInProvider>(
-                                  builder: (context, provider, child) {
-                                return CustomTextFormField(
-                                    controller: provider.eyeIconController,
-                                    textInputAction: TextInputAction.done,
-                                    suffix: InkWell(
-                                        onTap: () {
-                                          provider.changePasswordVisibility();
-                                        },
-                                        child: Container(
-                                            margin: EdgeInsets.all(16.h),
-                                            child: CustomImageView(
-                                                imagePath:
-                                                    ImageConstant.imgEyeIcon,
-                                                height: 24.adaptSize,
-                                                width: 24.adaptSize))),
-                                    suffixConstraints:
-                                        BoxConstraints(maxHeight: 56.v),
-                                    obscureText: provider.isShowPassword);
-                              }),
+                              Selector<SignInProvider, TextEditingController?>(
+                                  selector: (context, provider) =>
+                                      provider.passwordController,
+                                  builder:
+                                      (context, passwordController, child) {
+                                    return CustomTextFormField(
+                                      controller: passwordController,
+                                      hintText: "Enter your password",
+                                      obscureText: true,
+                                      validator: (value) {
+                                        if (value?.isEmpty ?? true) {
+                                          return "Please enter your password";
+                                        }
+                                        return null;
+                                      },
+                                    );
+                                  }),
                               SizedBox(height: 16.v),
                               Align(
                                   alignment: Alignment.centerRight,
@@ -181,10 +179,26 @@ class SignInScreenState extends State<SignInScreen> {
   }
 
   /// Navigates to the homeContainerScreen when the action is triggered.
-  onTapSignIn(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return HomeContainerScreen.builder(context);
-    }));
+  void onTapSignIn(BuildContext context) async {
+    if (_formKey.currentState!.validate()) {
+      final provider = Provider.of<SignInProvider>(context, listen: false);
+      String email = provider.emailController.text.trim();
+      String password = provider.passwordController.text.trim();
+
+      FirebaseService firebaseService = FirebaseService();
+      bool success = await firebaseService.signInUser(email, password);
+
+      if (success) {
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => HomeContainerScreen.builder(context)));
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text(
+                "Sign-in failed. Please check your credentials and try again.")));
+      }
+    }
   }
 
   /// Navigates to the signUpScreen when the action is triggered.

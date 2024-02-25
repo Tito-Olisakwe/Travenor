@@ -13,22 +13,15 @@ class SignUpProvider extends ChangeNotifier {
 
   TextEditingController emailController = TextEditingController();
 
-  TextEditingController eyeIconController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   SignUpModel signUpModelObj = SignUpModel();
-
-  bool isShowPassword = true;
 
   @override
   void dispose() {
     super.dispose();
     nameController.dispose();
     emailController.dispose();
-    eyeIconController.dispose();
-  }
-
-  void changePasswordVisibility() {
-    isShowPassword = !isShowPassword;
-    notifyListeners();
+    passwordController.dispose();
   }
 }

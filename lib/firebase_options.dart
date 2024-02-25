@@ -46,8 +46,8 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: dotenv.env['WEB_API_KEY'],
+  static final FirebaseOptions web = FirebaseOptions(
+    apiKey: dotenv.env['WEB_API_KEY'] ?? '',
     appId: '1:600025639536:web:c40ba3158542bfcf9462b5',
     messagingSenderId: '600025639536',
     projectId: 'travenor-87442',
@@ -56,16 +56,16 @@ class DefaultFirebaseOptions {
     measurementId: 'G-CE1HWCELGM',
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: dotenv.env['ANDROID_API_KEY'],
+  static final FirebaseOptions android = FirebaseOptions(
+    apiKey: dotenv.env['ANDROID_API_KEY'] ?? '',
     appId: '1:600025639536:android:507d28bc12d472129462b5',
     messagingSenderId: '600025639536',
     projectId: 'travenor-87442',
     storageBucket: 'travenor-87442.appspot.com',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: dotenv.env['IOS_API_KEY'],
+  static final FirebaseOptions ios = FirebaseOptions(
+    apiKey: dotenv.env['IOS_API_KEY'] ?? '',
     appId: '1:600025639536:ios:5202c108d6d2c3129462b5',
     messagingSenderId: '600025639536',
     projectId: 'travenor-87442',
@@ -73,8 +73,8 @@ class DefaultFirebaseOptions {
     iosBundleId: 'com.titoparissapplication.app',
   );
 
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: dotenv.env['MACOS_API_KEY'],
+  static final FirebaseOptions macos = FirebaseOptions(
+    apiKey: dotenv.env['MACOS_API_KEY'] ?? '',
     appId: '1:600025639536:ios:8abad6f1db87387d9462b5',
     messagingSenderId: '600025639536',
     projectId: 'travenor-87442',

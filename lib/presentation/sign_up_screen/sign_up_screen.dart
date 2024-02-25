@@ -7,6 +7,7 @@ import 'package:travenor/widgets/app_bar/custom_app_bar.dart';
 import 'package:travenor/widgets/custom_elevated_button.dart';
 import 'package:travenor/widgets/custom_icon_button.dart';
 import 'package:travenor/widgets/custom_text_form_field.dart';
+import 'package:travenor/core/utils/firebase_service.dart';
 import '../sign_in_screen/sign_in_screen.dart';
 import 'provider/sign_up_provider.dart';
 
@@ -59,8 +60,8 @@ class SignUpScreenState extends State<SignUpScreen> {
                               SizedBox(height: 24.v),
                               _buildEmail(context),
                               SizedBox(height: 24.v),
-                              _buildEyeIcon(context),
-                              SizedBox(height: 15.v),
+                              _buildPassword(context),
+                              SizedBox(height: 24.v),
                               Align(
                                   alignment: Alignment.centerLeft,
                                   child: Text("msg_password_must_be".tr,
@@ -110,7 +111,7 @@ class SignUpScreenState extends State<SignUpScreen> {
         selector: (context, provider) => provider.nameController,
         builder: (context, nameController, child) {
           return CustomTextFormField(
-              controller: nameController, hintText: "lbl_leonardo_smith".tr);
+              controller: nameController, hintText: "Enter your Name");
         });
   }
 
@@ -121,7 +122,7 @@ class SignUpScreenState extends State<SignUpScreen> {
         builder: (context, emailController, child) {
           return CustomTextFormField(
               controller: emailController,
-              hintText: "123email@gmail.com".tr,
+              hintText: "Enter your email",
               textInputType: TextInputType.emailAddress,
               validator: (value) {
                 if (value == null || (!isValidEmail(value, isRequired: true))) {
@@ -132,25 +133,21 @@ class SignUpScreenState extends State<SignUpScreen> {
         });
   }
 
-  /// Section Widget
-  Widget _buildEyeIcon(BuildContext context) {
-    return Consumer<SignUpProvider>(builder: (context, provider, child) {
-      return CustomTextFormField(
-          controller: provider.eyeIconController,
-          textInputAction: TextInputAction.done,
-          suffix: InkWell(
-              onTap: () {
-                provider.changePasswordVisibility();
-              },
-              child: Container(
-                  margin: EdgeInsets.all(16.h),
-                  child: CustomImageView(
-                      imagePath: ImageConstant.imgEyeIcon,
-                      height: 24.adaptSize,
-                      width: 24.adaptSize))),
-          suffixConstraints: BoxConstraints(maxHeight: 56.v),
-          obscureText: provider.isShowPassword);
-    });
+  Widget _buildPassword(BuildContext context) {
+    return Selector<SignUpProvider, TextEditingController?>(
+        selector: (context, provider) => provider.passwordController,
+        builder: (context, passwordController, child) {
+          return CustomTextFormField(
+              controller: passwordController,
+              hintText: "Enter your password",
+              obscureText: false,
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return "Please enter your password";
+                }
+                return null;
+              });
+        });
   }
 
   /// Section Widget
@@ -197,11 +194,30 @@ class SignUpScreenState extends State<SignUpScreen> {
   }
 
   /// Navigates to the signInScreen when the action is triggered.
-  onTapSignUp(BuildContext context) {
+  void onTapSignUp(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
-      Navigator.push(context, MaterialPageRoute(builder: (context) {
-        return SignInScreen.builder(context);
-      }));
+      // Access the SignUpProvider for user details
+      final provider = Provider.of<SignUpProvider>(context, listen: false);
+      String name = provider.nameController.text.trim();
+      String email = provider.emailController.text.trim();
+      String password = provider.passwordController.text.trim();
+
+      FirebaseService firebaseService = FirebaseService();
+
+      // Attempt to sign up the user with Firebase
+      bool success = await firebaseService.signUpUser(email, password, name);
+
+      if (success) {
+        ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text("User registered successfully")));
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => SignInScreen.builder(context)));
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text("Sign-up failed. Please try again.")));
+      }
     }
   }
 

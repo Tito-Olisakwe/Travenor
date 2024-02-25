@@ -11,21 +11,14 @@ import 'package:travenor/presentation/sign_in_screen/models/sign_in_model.dart';
 class SignInProvider extends ChangeNotifier {
   TextEditingController emailController = TextEditingController();
 
-  TextEditingController eyeIconController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   SignInModel signInModelObj = SignInModel();
-
-  bool isShowPassword = true;
 
   @override
   void dispose() {
     super.dispose();
     emailController.dispose();
-    eyeIconController.dispose();
-  }
-
-  void changePasswordVisibility() {
-    isShowPassword = !isShowPassword;
-    notifyListeners();
+    passwordController.dispose();
   }
 }
