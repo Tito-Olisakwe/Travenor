@@ -1,5 +1,7 @@
+import '../../widgets/custom_search_view.dart';
 import '../favorite_places_screen/widgets/viewhierarchy_item_widget.dart';
 // import 'models/favorite_places_model.dart';
+import '../search_screen/provider/search_provider.dart';
 import 'models/viewhierarchy_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:travenor/core/app_export.dart';
@@ -35,26 +37,32 @@ class FavoritePlacesScreenState extends State<FavoritePlacesScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: _buildAppBar(context),
-        body: Container(
-          width: double.maxFinite,
-          padding: EdgeInsets.symmetric(
-            horizontal: 19.h,
-            vertical: 8.v,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 17.v),
-              Padding(
-                padding: EdgeInsets.only(left: 1.h),
-                child: Text(
-                  "lbl_favorite_places".tr,
-                  style: theme.textTheme.titleLarge,
-                ),
-              ),
-              SizedBox(height: 18.v),
-              _buildViewHierarchy(context),
-            ],
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Container(
+            width: double.maxFinite,
+            padding: EdgeInsets.symmetric(
+              horizontal: 19.h,
+              vertical: 8.v,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 17.v),
+                Padding(
+                    padding: EdgeInsets.only(left: 1.h),
+                    child: Selector<SearchProvider, TextEditingController?>(
+                        selector: (context, provider) =>
+                            provider.searchController,
+                        builder: (context, searchController, child) {
+                          return CustomSearchView(
+                              controller: searchController,
+                              hintText: "lbl_search_places".tr);
+                        })),
+                SizedBox(height: 18.v),
+                _buildViewHierarchy(context),
+              ],
+            ),
           ),
         ),
       ),

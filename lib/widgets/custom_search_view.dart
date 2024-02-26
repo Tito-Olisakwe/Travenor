@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travenor/core/app_export.dart';
 
-class CustomSearchView extends StatelessWidget {
+class CustomSearchView extends StatefulWidget {
   CustomSearchView({
     Key? key,
     this.alignment,
@@ -72,37 +72,43 @@ class CustomSearchView extends StatelessWidget {
   final Function(String)? onChanged;
 
   @override
+  State<CustomSearchView> createState() => _CustomSearchViewState();
+}
+
+class _CustomSearchViewState extends State<CustomSearchView> {
+  @override
   Widget build(BuildContext context) {
-    return alignment != null
+    return widget.alignment != null
         ? Align(
-            alignment: alignment ?? Alignment.center,
+            alignment: widget.alignment ?? Alignment.center,
             child: searchViewWidget(context),
           )
         : searchViewWidget(context);
   }
 
   Widget searchViewWidget(BuildContext context) => SizedBox(
-        width: width ?? double.maxFinite,
+        width: widget.width ?? double.maxFinite,
         child: TextFormField(
           scrollPadding:
               EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-          controller: controller,
-          focusNode: focusNode ?? FocusNode(),
-          autofocus: autofocus!,
-          style: textStyle ?? CustomTextStyles.bodyLargeBluegray400_1,
-          keyboardType: textInputType,
-          maxLines: maxLines ?? 1,
+          controller: widget.controller,
+          focusNode: widget.focusNode ?? FocusNode(),
+          autofocus: widget.autofocus!,
+          style: widget.textStyle ?? CustomTextStyles.bodyLargeBluegray400_1,
+          keyboardType: widget.textInputType,
+          maxLines: widget.maxLines ?? 1,
           decoration: decoration,
-          validator: validator,
+          validator: widget.validator,
           onChanged: (String value) {
-            onChanged!.call(value);
+            widget.onChanged?.call(value);
           },
         ),
       );
+
   InputDecoration get decoration => InputDecoration(
-        hintText: hintText ?? "",
-        hintStyle: hintStyle ?? CustomTextStyles.bodyLargeBluegray400_1,
-        prefixIcon: prefix ??
+        hintText: widget.hintText ?? "",
+        hintStyle: widget.hintStyle ?? CustomTextStyles.bodyLargeBluegray400_1,
+        prefixIcon: widget.prefix ??
             Container(
               margin: EdgeInsets.fromLTRB(16.h, 12.v, 12.h, 12.v),
               child: CustomImageView(
@@ -111,11 +117,11 @@ class CustomSearchView extends StatelessWidget {
                 width: 24.adaptSize,
               ),
             ),
-        prefixIconConstraints: prefixConstraints ??
+        prefixIconConstraints: widget.prefixConstraints ??
             BoxConstraints(
               maxHeight: 48.v,
             ),
-        suffixIcon: suffix ??
+        suffixIcon: widget.suffix ??
             Container(
               margin: EdgeInsets.fromLTRB(30.h, 12.v, 16.h, 12.v),
               child: CustomImageView(
@@ -124,25 +130,26 @@ class CustomSearchView extends StatelessWidget {
                 width: 40.h,
               ),
             ),
-        suffixIconConstraints: suffixConstraints ??
+        suffixIconConstraints: widget.suffixConstraints ??
             BoxConstraints(
               maxHeight: 48.v,
             ),
         isDense: true,
-        contentPadding: contentPadding ?? EdgeInsets.symmetric(vertical: 14.v),
-        fillColor: fillColor ?? appTheme.gray100,
-        filled: filled,
-        border: borderDecoration ??
+        contentPadding:
+            widget.contentPadding ?? EdgeInsets.symmetric(vertical: 14.v),
+        fillColor: widget.fillColor ?? appTheme.gray100,
+        filled: widget.filled,
+        border: widget.borderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(16.h),
               borderSide: BorderSide.none,
             ),
-        enabledBorder: borderDecoration ??
+        enabledBorder: widget.borderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(16.h),
               borderSide: BorderSide.none,
             ),
-        focusedBorder: borderDecoration ??
+        focusedBorder: widget.borderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(16.h),
               borderSide: BorderSide.none,

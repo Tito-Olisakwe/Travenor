@@ -1,6 +1,7 @@
 // import 'models/home_container_model.dart';
 import 'package:flutter/material.dart';
 import 'package:travenor/core/app_export.dart';
+import 'package:travenor/presentation/favorite_places_screen/favorite_places_screen.dart';
 import 'package:travenor/presentation/home_page/home_page.dart';
 import 'package:travenor/presentation/profile_screen/profile_screen.dart';
 // import 'package:travenor/widgets/custom_bottom_bar.dart';
@@ -31,6 +32,7 @@ class HomeContainerScreenState extends State<HomeContainerScreen> {
   int index = 0;
   final screens = [
     const HomePage(),
+    const FavoritePlacesScreen(),
     const ProfileScreen(),
   ];
 
@@ -41,7 +43,7 @@ class HomeContainerScreenState extends State<HomeContainerScreen> {
       body: screens[index],
       bottomNavigationBar: NavigationBarTheme(
         data: NavigationBarThemeData(
-          backgroundColor: const Color(0xff581845),
+          backgroundColor: const Color(0xff0D6EFD),
           indicatorColor: Colors.white,
           labelTextStyle: MaterialStateProperty.all(
             const TextStyle(
@@ -56,18 +58,22 @@ class HomeContainerScreenState extends State<HomeContainerScreen> {
           ),
         ),
         child: BottomNavigationBar(
-          selectedItemColor: const Color(0xff581845),
+          selectedItemColor: const Color(0xff0D6EFD),
           unselectedItemColor: const Color(0xff888888),
           showUnselectedLabels: true,
           currentIndex: index,
           onTap: (index) => setState(() => this.index = index),
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.home, size: 30),
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
+              icon: Icon(Icons.search, size: 30),
+              label: 'Search',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person, size: 30),
               label: 'Profile',
             ),
           ],
