@@ -47,7 +47,7 @@ class DefaultFirebaseOptions {
   }
 
   static final FirebaseOptions web = FirebaseOptions(
-    apiKey: dotenv.env['WEB_API_KEY'] ?? ' ',
+    apiKey: dotenv.env['WEB_API_KEY'] ?? '',
     appId: '1:600025639536:web:c40ba3158542bfcf9462b5',
     messagingSenderId: '600025639536',
     projectId: 'travenor-87442',

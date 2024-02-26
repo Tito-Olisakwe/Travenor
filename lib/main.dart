@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 // import 'package:provider/provider.dart';
 import 'package:travenor/presentation/app_navigation_screen/provider/app_navigation_provider.dart';
@@ -24,6 +26,9 @@ var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   Future.wait([
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
