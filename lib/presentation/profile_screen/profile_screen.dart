@@ -25,6 +25,7 @@ class ProfileScreen extends StatefulWidget {
 class ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
+    /// Fetch user profile data
     final user = FirebaseAuth.instance.currentUser;
 
     return SafeArea(

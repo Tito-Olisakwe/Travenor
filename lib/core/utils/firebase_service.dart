@@ -44,6 +44,7 @@ class FirebaseService {
     return snapshot.data() as Map<String, dynamic>?;
   }
 
+//update user profile
   Future<bool> updateUserProfile(
       String uid, String name, String email, String password) async {
     try {

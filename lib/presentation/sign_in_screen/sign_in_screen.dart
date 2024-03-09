@@ -179,6 +179,7 @@ class SignInScreenState extends State<SignInScreen> {
   }
 
   /// Navigates to the homeContainerScreen when the action is triggered.
+  /// If the sign-in is successful, the user is navigated to the homeContainerScreen.
   void onTapSignIn(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
       final provider = Provider.of<SignInProvider>(context, listen: false);
