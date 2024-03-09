@@ -105,6 +105,30 @@ class SignInScreenState extends State<SignInScreen> {
                                   onPressed: () {
                                     onTapSignIn(context);
                                   }),
+                              SizedBox(height: 16.v),
+                              CustomElevatedButton(
+                                text: "Continue with Google",
+                                onPressed: () async {
+                                  final FirebaseService firebaseService =
+                                      FirebaseService();
+                                  final user =
+                                      await firebaseService.signInWithGoogle();
+                                  if (user != null) {
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                HomeContainerScreen.builder(
+                                                    context)));
+                                  } else {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                          content: Text(
+                                              "Google Sign-In failed. Please try again.")),
+                                    );
+                                  }
+                                },
+                              ),
                               SizedBox(height: 39.v),
                               Row(
                                   mainAxisAlignment: MainAxisAlignment.center,

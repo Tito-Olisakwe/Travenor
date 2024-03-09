@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>600025639536-l815equiqr0vtfl6lm0ob2joqd2ahv4r.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.600025639536-l815equiqr0vtfl6lm0ob2joqd2ahv4r</string>
 	<key>API_KEY</key>
 	<string>AIzaSyA1RYWwc5-StgCa1TkB_QA8e9OsJi2qLmo</string>
 	<key>GCM_SENDER_ID</key>
@@ -9,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.titoparissapplication.travenor.RunnerTests</string>
+	<string>com.titoparissapplication.app</string>
 	<key>PROJECT_ID</key>
 	<string>travenor-87442</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:600025639536:ios:8abad6f1db87387d9462b5</string>
+	<string>1:600025639536:ios:5202c108d6d2c3129462b5</string>
 </dict>
 </plist>
