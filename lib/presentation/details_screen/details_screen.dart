@@ -152,6 +152,7 @@ class DetailsScreenState extends State<DetailsScreen> {
   /// Section Widget
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
+      key: Key("appBar"),
       height: 52.v,
       leadingWidth: 64.h,
       leading: AppbarLeadingIconbuttonOne(
