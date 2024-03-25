@@ -22,11 +22,12 @@ dependencies:
   firebase_auth: ^4.17.4
   cloud_firestore: ^4.15.5
   google_sign_in: ^6.2.1
+  flutter_screenutil: ^5.9.0
 dev_dependencies:
   flutter_driver:
     sdk: flutter
   test: any 
-  mockito:
+  mockito: ^5.0.0
   flutter_test: 
     sdk: flutter
 flutter: 
